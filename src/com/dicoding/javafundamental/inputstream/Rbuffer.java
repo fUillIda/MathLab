@@ -38,10 +38,10 @@ public class Rbuffer {
       this.kodeS = kodeS;
    }
 
-   private void Rbuffer (int bil1, int bil2){
-      this.bil1 = bil1;
-      this.bil2 = bil2;
-   }
+//   private void Rbuffer (int bil1, int bil2){
+//      this.bil1 = bil1;
+//      this.bil2 = bil2;
+//   }
 
    public int getBil1() {
       return bil1;
@@ -64,6 +64,7 @@ public class Rbuffer {
       InputStreamReader isr = new InputStreamReader(System.in);
       BufferedReader buff = new BufferedReader(isr);
       Rbuffer rb = new Rbuffer();
+      Calculate calc = new Calculate();
       try {
          System.out.println("Program kalkulator sederhana");
          System.out.print("Masukkan Angka pertama : ");
@@ -71,10 +72,10 @@ public class Rbuffer {
          System.out.print("Masukkan Angka kedua : ");
          rb.setBil2(((rb.getChc() == 2) ? buff.read() : (input.nextInt()) ));
          System.out.println("Operasi (+/-/x/:) ?");
-         String kode = ( (rb.getChc() == 1) ? input.next() : buff.readLine());
-         System.out.println(Calculate.Calculate(rb.getBil1(), rb.getBil2(), kode.substring(0, 1)) + " " + kode.substring(0, 1));
+         rb.setKodeS( (rb.getChc() == 1) ? input.next() : buff.readLine());
+         rb.setKode(rb.getKodeS().charAt(0));
+         System.out.println(calc.Calculator(rb.getBil1(), rb.getBil2(), rb.getKode()));
          System.out.println(rb.getBil2());
-         System.out.println(kode.substring(0, 1) + " " + kode.substring(0, 1));
       } catch (IOException e){
          e.printStackTrace();
       }

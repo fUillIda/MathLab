@@ -10,18 +10,18 @@ package com.dicoding.javafundamental.mathlab;
  * @author lenovo
  */
 public class Calculate {
-    public static int Calculate(){
-        return 0;
-    }
-    public static int Calculate(int x,int y,String p){
+//    public static int Calculate(){
+//        return 0;
+//    }
+    public int Calculator(int x,int y,char p){
         switch (p) {
-            case "+" :
+            case '+' :
                 return x + y;
-            case "-" :
+            case '-' :
                 return x - y;
-            case "x" :
+            case 'x' :
                 return x * y;
-            case ":" :
+            case ':' :
                 return x / y;
             default:
                 return 0;
